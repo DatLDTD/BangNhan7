@@ -1,17 +1,17 @@
 var tableContent = [
     {
         img: "slide-1.PNG",
-        title: "Slide 1",
+        title: "Mở đầu",
         status: "canactive"
     },
     {
         img: "slide-2.PNG",
-        title: "Slide 2",
+        title: "Mục tiêu bài học",
         status: "deactive"
     },
     {
         img: "slide-3.PNG",
-        title: "Slide 3",
+        title: "Bảng nhân 7",
         status: "deactive"
     },
     {
@@ -65,10 +65,23 @@ var tableContent = [
         status: "deactive"
     }
 ]
+var timer;
 var currentSlide = sessionStorage.getItem("currentSlide") ? parseInt(sessionStorage.getItem("currentSlide")) : 0;;
 var maxSlide = sessionStorage.getItem("maxSlide") ? parseInt(sessionStorage.getItem("maxSlide")) : 0;
 var contentContainer = document.querySelector('.content-container');
+function clickButtonPrev() {
+    setSlide(currentSlide - 1);
+    activeSlide()
+}
+function clickButtonReload() {
+    activeSlide()
+}
+function clickButtonNext() {
+    setSlide(currentSlide + 1);
+    activeSlide()
+}
 function activeSlide() {
+    clearTimeout(timer)
     tableContent.forEach((item, index) => {
         item.status = 'deactive';
         if (index <= maxSlide) {
@@ -95,28 +108,32 @@ function addEvent() {
     document.querySelectorAll('.content-wrapper:not(.deactive)').forEach((item, index) => {
         item.addEventListener('click', function click() {
             setSlide(index);
-            location.reload();
+            activeSlide();
         })
     })
 }
-function clickButtonPrev() {
-    setSlide(currentSlide - 1);
-    location.reload();
-}
-function clickButtonReload() {
-    location.reload();
-}
-function clickButtonNext() {
-    setSlide(currentSlide + 1);
-    location.reload();
-}
 function onSwitchSLide() {
-    document.querySelectorAll('.slide-wrapper .slide')[currentSlide].classList.add('active')
-    document.querySelectorAll('.content-wrapper')[currentSlide].classList.add('active')
+    document.querySelectorAll('.slide-wrapper .slide').forEach(item => {
+        item.classList.remove('active')
+    })
+    document.querySelectorAll('.content-wrapper').forEach(item => {
+        item.classList.remove('active')
+    })
+    setTimeout(() => {
+        document.querySelectorAll('.slide-wrapper .slide')[currentSlide].classList.add('active')
+        document.querySelectorAll('.content-wrapper')[currentSlide].classList.add('active')
+    }, 0)
     if (currentSlide == 0) {
         document.querySelector('.btn-prev').classList.add('deactive');
     }
-    document.querySelector('.btn-next').classList.add('deactive')
+    else {
+        document.querySelector('.btn-prev').classList.remove('deactive');
+    }
+    if (tableContent[currentSlide + 1].status == 'deactive') {
+        document.querySelector('.btn-next').classList.add('deactive')
+    } else {
+        document.querySelector('.btn-next').classList.remove('deactive')
+    }
     callFunctionRenderSlide();
 }
 function setSlide(number) {
@@ -192,7 +209,7 @@ function renderSlide1() {
     }, 7000)
 }
 function renderSlide2() {
-    setTimeout(() => {
+    timer = setTimeout(() => {
         document.querySelector('.btn-next').classList.remove('deactive')
     }, 14000)
 }
