@@ -8,12 +8,18 @@
     <title>Bài giảng bảng nhân 7</title>
     <link rel="stylesheet" href="./source/css/all.min.css">
     <link rel="stylesheet" href="./source/css/style.css">
-    
+
 </head>
 
 <body>
     <div class="main-container">
         <div class="slide-container slide-1">
+            <div class="filter"></div>
+            <div class="notice">
+                <h1></h1>
+                <h2 style="margin: 1rem 0;"></h2>
+                <button class="btn" id="notice-action"></button>
+            </div>
             <div class="slide-wrapper">
                 <div class="slide" id="slide-1"
                     style="background:url(./source/images/bg_bang-xanh.png) no-repeat; background-size: 100% 100%;">
@@ -39,7 +45,7 @@
                     </h2>
                 </div>
                 <div class="slide" id="slide-3">
-                    <h1>Bảng nhân 7</h1>
+                    <h1>Cách lập bảng nhân 7</h1>
                     <div style="display: flex;">
                         <div class="item item-1">
                             <h2>7 x 1 = <div style="display: inline-block; color: brown;" class="item item-2">
@@ -151,48 +157,337 @@
                                 </div>
                             </h2>
                         </div>
-                        <button class="btn" style="height: 40px; margin: auto 0 auto 20px;">Kiểm tra kết quả</button>
+                        <button class="btn btn-result" style="height: 40px; margin: auto 0 auto 20px; background-color: black;">Kiểm tra kết
+                            quả</button>
                     </div>
                 </div>
                 <div class="slide" id="slide-4">
-                    <h1>Slide 4</h1>
+                    <h1 class="item">GHI NHỚ: CÁC CÁCH LẬP BẢNG NHÂN</h1>
+                    <h2 class="item item-1">
+                        <span>Cách 1:</span> Dựa vào kết quả của phép nhân liền trước.
+                    </h2>
+                    <h2 class="item item-2">
+                        <span>Cách 2:</span> Dựa vào các bảng nhân đã học.
+                    </h2>
+                    <h2 class="item item-3">
+                        <span>Cách 3:</span> Dựa vào phép cộng các số hạng giống nhau.
+                    </h2>
                 </div>
                 <div class="slide" id="slide-5">
-                    <h1>Slide 5</h1>
+                    <h1>Bảng nhân 7</h1>
+                    <div
+                        style="position: relative; border: 2px solid blue; padding: 1rem 3rem; border-radius: 20px; background-color: rgba(255, 230, 0, 0.5);">
+                        <div style="position: absolute; left: -60%; top:25%;">
+                            <h3
+                                style="font-size:1.5rem; position: relative;left:-10px; top: 40px; color: green; max-width: 20ch;">
+                                Ghi nhớ nhé!!!
+                            </h3>
+                            <i id="arrow-move" class="fas fa-long-arrow-alt-right"
+                                style="color: #229584; font-size: 10vw; position: relative;"></i>
+                        </div>
+                        <h2>7 x 1 &nbsp;&nbsp;= <span>7</span></h2>
+                        <h2>7 x 2 &nbsp;&nbsp;= <span>14</span></h2>
+                        <h2>7 x 3 &nbsp;&nbsp;= <span>21</span></h2>
+                        <h2>7 x 4 &nbsp;&nbsp;= <span>28</span></h2>
+                        <h2>7 x 5 &nbsp;&nbsp;= <span>35</span></h2>
+                        <h2>7 x 6 &nbsp;&nbsp;= <span>42</span></h2>
+                        <h2>7 x 7 &nbsp;&nbsp;= <span>49</span></h2>
+                        <h2>7 x 8 &nbsp;&nbsp;= <span>56</span></h2>
+                        <h2>7 x 9 &nbsp;&nbsp;= <span>63</span></h2>
+                        <h2>7 x 10 = <span>70</span></h2>
+                    </div>
                 </div>
                 <div class="slide" id="slide-6">
-                    <h1>Slide 6</h1>
+                    <h1>Chia sẻ trong nhóm</h1>
+                    <img src="./source/images/Picture1.png" alt="img" width="60%" style="position: relative; top: 10%;">
+                    <img src="./source/images/Picture2.jpg" alt="img" style="position: relative; top: -20%; left: 5%;">
                 </div>
                 <div class="slide" id="slide-7">
-                    <h1>Slide 7</h1>
+                    <h1>Vòng quay may mắn</h1>
+                    <div class="spin-container">
+                        <div class="arrow-container active">7 x </div>
+                        <div class="spin-wrapper" id="spinwrapper"></div>
+                        <button class="btn active" id="btnspin">Quay</button>
+                    </div>
+                    <div class="question">
+                        7 x <span class="random">...</span> = <div class="result-wrapper">
+                            <input class="result" id="70" type="text" placeholder="??">
+                            <i class="fas fa-check true"></i>
+                            <i class="fas fa-times false"></i>
+                        </div>
+                        <button class="btn btn-result"
+                            style="height: 40px; margin: auto 0 auto 20px; position: relative; bottom: 7px; background-color: black;">Kiểm tra
+                            kết
+                            quả</button>
+                    </div>
+                    <h2 style="color: green; text-align: center;">Quay vòng quay và điền kết quả vào ô trống!!!</h2>
+
                 </div>
                 <div class="slide" id="slide-8">
-                    <h1>Slide 8</h1>
+                    <h1>Bài tập 1</h1>
+                    <p style="font-size: 2rem; font-weight: 600; margin-top: 1.5rem ; margin-left: 2vw;">
+                        Bài 1 (T31): Tính
+                        nhẩm</p>
+                    <div>
+                        <div class="col">
+                            <h2>7 x 3 =
+                                <div class="result-wrapper">
+                                    <input class="result" id="21" type="text" placeholder="??">
+                                    <i class="fas fa-check true"></i>
+                                    <i class="fas fa-times false"></i>
+                                </div>
+                            </h2>
+                            <h2>7 x 5 =
+                                <div class="result-wrapper">
+                                    <input class="result" id="35" type="text" placeholder="??">
+                                    <i class="fas fa-check true"></i>
+                                    <i class="fas fa-times false"></i>
+                                </div>
+                            </h2>
+                            <h2>7 x 7 =
+                                <div class="result-wrapper">
+                                    <input class="result" id="49" type="text" placeholder="??">
+                                    <i class="fas fa-check true"></i>
+                                    <i class="fas fa-times false"></i>
+                                </div>
+                            </h2>
+                        </div>
+                        <div class="col">
+                            <h2>7 x 8 =
+                                <div class="result-wrapper">
+                                    <input class="result" id="56" type="text" placeholder="??">
+                                    <i class="fas fa-check true"></i>
+                                    <i class="fas fa-times false"></i>
+                                </div>
+                            </h2>
+                            <h2>7 x 6 =
+                                <div class="result-wrapper">
+                                    <input class="result" id="42" type="text" placeholder="??">
+                                    <i class="fas fa-check true"></i>
+                                    <i class="fas fa-times false"></i>
+                                </div>
+                            </h2>
+                            <h2>7 x 4 =
+                                <div class="result-wrapper">
+                                    <input class="result" id="28" type="text" placeholder="??">
+                                    <i class="fas fa-check true"></i>
+                                    <i class="fas fa-times false"></i>
+                                </div>
+                            </h2>
+
+                        </div>
+                        <div class="col">
+                            <h2>7 x 2 &nbsp;&nbsp;=
+                                <div class="result-wrapper">
+                                    <input class="result" id="14" type="text" placeholder="??">
+                                    <i class="fas fa-check true"></i>
+                                    <i class="fas fa-times false"></i>
+                                </div>
+                            </h2>
+                            <h2>7 x 10 =
+                                <div class="result-wrapper">
+                                    <input class="result" id="70" type="text" placeholder="??">
+                                    <i class="fas fa-check true"></i>
+                                    <i class="fas fa-times false"></i>
+                                </div>
+                            </h2>
+                            <h2>7 x 9 &nbsp;&nbsp;=
+                                <div class="result-wrapper">
+                                    <input class="result" id="63" type="text" placeholder="??">
+                                    <i class="fas fa-check true"></i>
+                                    <i class="fas fa-times false"></i>
+                                </div>
+                            </h2>
+
+                        </div>
+                        <div class="col">
+                            <h2>7 x 1 =
+                                <div class="result-wrapper">
+                                    <input class="result" id="7" type="text" placeholder="??">
+                                    <i class="fas fa-check true"></i>
+                                    <i class="fas fa-times false"></i>
+                                </div>
+                            </h2>
+                            <h2>0 x 7 =
+                                <div class="result-wrapper">
+                                    <input class="result" id="0" type="text" placeholder="??">
+                                    <i class="fas fa-check true"></i>
+                                    <i class="fas fa-times false"></i>
+                                </div>
+                            </h2>
+                            <h2>7 x 0 =
+                                <div class="result-wrapper">
+                                    <input class="result" id="0" type="text" placeholder="??">
+                                    <i class="fas fa-check true"></i>
+                                    <i class="fas fa-times false"></i>
+                                </div>
+                            </h2>
+
+                        </div>
+                    </div>
+                    <button class="btn btn-result"
+                        style="height: 40px; margin-left: 50%; transform: translateX(-50%); background-color: black;">Kiểm tra kết
+                        quả</button>
                 </div>
                 <div class="slide" id="slide-9">
-                    <h1>Slide 9</h1>
+                    <h1>Bài tập 2</h1>
+                    <p class="item item-1"
+                        style="font-size: 2rem; font-weight: 600; margin-top: 3rem ; margin-left: 2vw;">
+                        Bài 2: Mỗi tuần lễ có 7 ngày. Hỏi 4 tuần lễ có tất cả bao nhiêu ngày?
+                    </p>
+                    <div class="item item-2"
+                        style="color: brown; font-size: 2rem; margin-top: 1.5rem ; margin-left: 2vw;">
+                        <h4 style="text-decoration: underline; font-style: italic;">Tóm tắt:</h4>
+                        <p>1 tuần: 7 ngày</p>
+                        <p>4 tuần: ... ngày?</p>
+                    </div>
+                    <div class="item item-3"
+                        style="color: green; font-size: 2rem; margin-top: 1.5rem ; margin-left: 2vw; text-align: center;">
+                        <h3 style="text-decoration: underline; font-style: italic; margin-bottom: 1rem;">Bài giải</h3>
+                        <h4>4 tuần lễ có tất cả số ngày là:</h4>
+                        <h4 style="margin: 1.5rem 0 ">7 x 4 = <div class="result-wrapper">
+                                <input class="result" id="28" type="text" placeholder="??">
+                                <i class="fas fa-check true"></i>
+                                <i class="fas fa-times false"></i>
+                            </div>
+                            (ngày)
+                        </h4>
+                        <h4>Đáp số: <div class="result-wrapper">
+                                <input class="result" id="28" type="text" placeholder="??">
+                                <i class="fas fa-check true"></i>
+                                <i class="fas fa-times false"></i>
+                            </div> ngày
+                        </h4>
+                        <button class="btn btn-result" style="height: 40px; margin-top: 2rem; background-color: black;">Kiểm
+                            tra
+                            kết quả</button>
+                    </div>
+
                 </div>
                 <div class="slide" id="slide-10">
-                    <h1>Slide 10</h1>
+                    <h1>Bài tập 3</h1>
+                    <p class="item item-1"
+                        style="font-size: 2rem; font-weight: 600; margin-top: 3rem ; margin-left: 2vw;">
+                        Bài 3: <span style="color: brown;">Đếm thêm 7</span> rồi viết số thích hợp vào ô trống:
+                    </p>
+                    <div class="item item-2">
+                        <span>&nbsp;7&nbsp;</span>
+                        <span>14</span>
+                        <span>21</span>
+                        <span style="padding: 1.2vw 0.95vw;">
+                            <div class="result-wrapper">
+                                <input class="result" id="28" type="text" placeholder="??">
+                                <i class="fas fa-check true"></i>
+                                <i class="fas fa-times false"></i>
+                            </div>
+                        </span>
+                        <span style="padding: 1.2vw 0.95vw;">
+                            <div class="result-wrapper">
+                                <input class="result" id="35" type="text" placeholder="??">
+                                <i class="fas fa-check true"></i>
+                                <i class="fas fa-times false"></i>
+                            </div>
+                        </span>
+                        <span>42</span>
+                        <span style="padding: 1.2vw 0.95vw;">
+                            <div class="result-wrapper">
+                                <input class="result" id="49" type="text" placeholder="??">
+                                <i class="fas fa-check true"></i>
+                                <i class="fas fa-times false"></i>
+                            </div>
+                        </span>
+                        <span style="padding: 1.2vw 0.95vw;">
+                            <div class="result-wrapper">
+                                <input class="result" id="56" type="text" placeholder="??">
+                                <i class="fas fa-check true"></i>
+                                <i class="fas fa-times false"></i>
+                            </div>
+                        </span>
+                        <span>63</span>
+                        <span style="padding: 1.2vw 0.95vw;">
+                            <div class="result-wrapper">
+                                <input class="result" id="70" type="text" placeholder="??">
+                                <i class="fas fa-check true"></i>
+                                <i class="fas fa-times false"></i>
+                            </div>
+                        </span>
+                        <button class="btn btn-result"
+                            style="height: 40px; margin-top: 2rem; display: block; margin: 5rem auto; background-color: black;">Kiểm
+                            tra
+                            kết quả</button>
+                    </div>
                 </div>
                 <div class="slide" id="slide-11">
-                    <h1>Slide 11</h1>
+                    <div class="title">
+                        Thử tài của bạn
+                    </div>
+                    <p class="item item-1"
+                        style="font-size: 2rem; font-weight: 600; margin-top: 2rem ; text-align: center;">
+                        Điền số thích hợp vào các hình dưới đây,
+                    </p>
+                    <p class="item item-1" style="font-size: 2rem; font-weight: 600; ; text-align: center;">
+                        biết hình giống nhau thì số giống nhau
+                    </p>
+                    <h2 style="font-size: 2.5rem; text-align: center; margin-top: 3rem;">
+                        <span class="square"
+                            style="padding-top: 1.4vw; padding-bottom: 1.4vw; padding-left: 1.1vw; padding-right: 0.7vw;">
+                            <div class="result-wrapper">
+                                <input class="result" id="7" type="text" placeholder="??">
+                                <i class="fas fa-check true"></i>
+                                <i class="fas fa-times false"></i>
+                            </div>
+                        </span>&nbsp;x <span class="square"
+                            style="padding-top: 1.4vw; padding-bottom: 1.4vw; padding-left: 1.1vw; padding-right: 0.7vw;">
+                            <div class="result-wrapper">
+                                <input class="result" id="7" type="text" placeholder="??">
+                                <i class="fas fa-check true"></i>
+                                <i class="fas fa-times false"></i>
+                            </div>
+                        </span>&nbsp;= 49
+                    </h2>
+                    <h2 style="font-size: 2.5rem; text-align: center; margin-top: 5rem;">
+                        <span class="triagle"
+                            style="padding-top: 1.4vw; padding-bottom: 1.4vw; padding-left: 1.8vw; padding-right: 1.4vw;">
+                            <div class="result-wrapper" style="position: relative; top: 10px;">
+                                <input class="result" id="3" type="text" placeholder="??">
+                                <i class="fas fa-check true"></i>
+                                <i class="fas fa-times false"></i>
+                            </div>
+                        </span>&nbsp;x <span class="square"
+                            style="padding-top: 1.4vw; padding-bottom: 1.4vw; padding-left: 1.1vw; padding-right: 0.7vw;">
+                            <div class="result-wrapper">
+                                <input class="result" id="7" type="text" placeholder="??">
+                                <i class="fas fa-check true"></i>
+                                <i class="fas fa-times false"></i>
+                            </div>
+                        </span>&nbsp;x <span class="triagle"
+                        style="padding-top: 1.4vw; padding-bottom: 1.4vw; padding-left: 1.8vw; padding-right: 1.4vw;">
+                            <div class="result-wrapper" style="position: relative; top: 10px;">
+                                <input class="result" id="3" type="text" placeholder="??">
+                                <i class="fas fa-check true"></i>
+                                <i class="fas fa-times false"></i>
+                            </div>
+                        </span>&nbsp;= 63
+                    </h2>
+                    <button class="btn btn-result"
+                    style="height: 40px; margin-top: 2rem; display: block; margin: 5rem auto; background-color: black;">Kiểm
+                    tra
+                    kết quả</button>
                 </div>
                 <div class="slide" id="slide-12">
                     <h1>Slide 12</h1>
                 </div>
                 <div class="slide" id="slide-13">
-                    <h1>Slide 13</h1>
                 </div>
             </div>
             <div class="bottom-bar-wrapper">
                 <button class="btn btn-prev" onclick="clickButtonPrev()">
-                    <i class="fas fa-backward"></i> Trước
+                    <i class="fas fa-backward"></i> Bài trước
                 </button>
                 <button class="btn btn-refresh" onclick="clickButtonReload()"><i class="fas fa-redo"
                         style="transform:matrix(-1, 0, 0, 1, 0, 0)"></i></button>
                 <button class="btn btn-next" onclick="clickButtonNext()">
-                    Sau <i class="fas fa-forward"></i>
+                    Bài sau <i class="fas fa-forward"></i>
                 </button>
             </div>
         </div>
@@ -205,6 +500,7 @@
                 </div>
             </div>
         </div>
+
     </div>
     <script src="./source/js/all.min.js"></script>
     <script src="./source/js/script.js"></script>
