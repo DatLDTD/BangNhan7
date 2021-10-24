@@ -68,7 +68,7 @@ var tableContent = [
 var timer;
 var timerSpin;
 var currentSlide = sessionStorage.getItem("currentSlide") ? parseInt(sessionStorage.getItem("currentSlide")) : 0;;
-var maxSlide = sessionStorage.getItem("maxSlide") ? parseInt(sessionStorage.getItem("maxSlide")) : 0;
+var maxSlide = localStorage.getItem("maxSlide") ? parseInt(localStorage.getItem("maxSlide")) : 0;
 var contentContainer = document.querySelector('.content-container');
 function clickButtonPrev() {
     setSlide(currentSlide - 1);
@@ -134,11 +134,12 @@ function onSwitchSLide() {
     else {
         document.querySelector('.btn-prev').classList.remove('deactive');
     }
-    if (tableContent[currentSlide + 1].status == 'deactive') {
-        document.querySelector('.btn-next').classList.add('deactive')
-    } else {
-        document.querySelector('.btn-next').classList.remove('deactive')
-    }
+    if (currentSlide < 12)
+        if (tableContent[currentSlide + 1].status == 'deactive' || !tableContent[currentSlide + 1].status) {
+            document.querySelector('.btn-next').classList.add('deactive')
+        } else {
+            document.querySelector('.btn-next').classList.remove('deactive')
+        }
     callFunctionRenderSlide();
 }
 function setSlide(number) {
@@ -146,7 +147,7 @@ function setSlide(number) {
     sessionStorage.setItem("currentSlide", currentSlide)
     if (currentSlide > maxSlide) {
         maxSlide = currentSlide
-        sessionStorage.setItem("maxSlide", maxSlide)
+        localStorage.setItem("maxSlide", maxSlide)
     }
 }
 function callFunctionRenderSlide() {
@@ -238,6 +239,8 @@ function renderSlide3() {
             document.querySelector('.notice').querySelector('h2').innerHTML = "Ấn nút để làm lại nhé."
             document.querySelector('.notice').querySelector('button').innerHTML = "Làm lại"
             document.querySelector('.notice').classList.add('false')
+            document.getElementById('falseAudio').volume = 0.05
+            document.getElementById('falseAudio').play();
             document.querySelector('.notice').querySelector('button').addEventListener('click', () => {
                 document.querySelector('.filter').classList.remove('active')
                 document.querySelector('.notice').classList.remove('false')
@@ -253,6 +256,8 @@ function renderSlide3() {
             document.querySelector('.notice').querySelector('h2').innerHTML = "Ấn tiếp tục và chuyển sang bài tiếp theo thôi."
             document.querySelector('.notice').querySelector('button').innerHTML = "Tiếp tục"
             document.querySelector('.notice').classList.add('true')
+            document.getElementById('trueAudio').volume = 0.05
+            document.getElementById('trueAudio').play();
             document.querySelector('.notice').querySelector('button').addEventListener('click', () => {
                 document.querySelector('.filter').classList.remove('active')
                 document.querySelector('.notice').classList.remove('true')
@@ -328,6 +333,8 @@ function renderSlide7() {
             document.querySelector('.notice').querySelector('h2').innerHTML = "Ấn nút để làm lại nhé."
             document.querySelector('.notice').querySelector('button').innerHTML = "Làm lại"
             document.querySelector('.notice').classList.add('false')
+            document.getElementById('falseAudio').volume = 0.05
+            document.getElementById('falseAudio').play();
             document.querySelector('.notice').querySelector('button').addEventListener('click', () => {
                 document.querySelector('.filter').classList.remove('active')
                 document.querySelector('.notice').classList.remove('false')
@@ -343,6 +350,8 @@ function renderSlide7() {
             document.querySelector('.notice').querySelector('h2').innerHTML = "Làm thêm vài lần cho chắc nhé."
             document.querySelector('.notice').querySelector('button').innerHTML = "Tiếp tục"
             document.querySelector('.notice').classList.add('true')
+            document.getElementById('trueAudio').volume = 0.05
+            document.getElementById('trueAudio').play();
             document.querySelector('.notice').querySelector('button').addEventListener('click', () => {
                 document.querySelector('.filter').classList.remove('active')
                 document.querySelector('.notice').classList.remove('true')
@@ -364,13 +373,15 @@ function renderSlide8() {
             document.querySelectorAll('#slide-8 .result-wrapper')[index].classList.remove('false')
         })
         document.querySelectorAll('#slide-8 input.result').forEach((input, index) => {
-            document.querySelectorAll('#slide-8 .result-wrapper')[index].classList.add(`${input.value == parseInt(input.getAttribute('id'))}`)
+            document.querySelectorAll('#slide-8 .result-wrapper')[index].classList.add(`${parseInt(input.value) == parseInt(input.getAttribute('id'))}`)
         })
         if (document.querySelectorAll('#slide-8 .result-wrapper.false').length > 0) {
             document.querySelector('.notice').querySelector('h1').innerHTML = "Chưa đúng rồi !!!"
             document.querySelector('.notice').querySelector('h2').innerHTML = "Ấn nút để làm lại nhé."
             document.querySelector('.notice').querySelector('button').innerHTML = "Làm lại"
             document.querySelector('.notice').classList.add('false')
+            document.getElementById('falseAudio').volume = 0.05
+            document.getElementById('falseAudio').play();
             document.querySelector('.notice').querySelector('button').addEventListener('click', () => {
                 document.querySelector('.filter').classList.remove('active')
                 document.querySelector('.notice').classList.remove('false')
@@ -386,6 +397,8 @@ function renderSlide8() {
             document.querySelector('.notice').querySelector('h2').innerHTML = "Ấn tiếp tục và chuyển sang bài tiếp theo thôi."
             document.querySelector('.notice').querySelector('button').innerHTML = "Tiếp tục"
             document.querySelector('.notice').classList.add('true')
+            document.getElementById('trueAudio').volume = 0.05
+            document.getElementById('trueAudio').play();
             document.querySelector('.notice').querySelector('button').addEventListener('click', () => {
                 document.querySelector('.filter').classList.remove('active')
                 document.querySelector('.notice').classList.remove('true')
@@ -414,6 +427,8 @@ function renderSlide9() {
             document.querySelector('.notice').querySelector('h2').innerHTML = "Ấn nút để làm lại nhé."
             document.querySelector('.notice').querySelector('button').innerHTML = "Làm lại"
             document.querySelector('.notice').classList.add('false')
+            document.getElementById('falseAudio').volume = 0.05
+            document.getElementById('falseAudio').play();
             document.querySelector('.notice').querySelector('button').addEventListener('click', () => {
                 document.querySelector('.filter').classList.remove('active')
                 document.querySelector('.notice').classList.remove('false')
@@ -429,6 +444,8 @@ function renderSlide9() {
             document.querySelector('.notice').querySelector('h2').innerHTML = "Ấn tiếp tục và chuyển sang bài tiếp theo thôi."
             document.querySelector('.notice').querySelector('button').innerHTML = "Tiếp tục"
             document.querySelector('.notice').classList.add('true')
+            document.getElementById('trueAudio').volume = 0.05
+            document.getElementById('trueAudio').play();
             document.querySelector('.notice').querySelector('button').addEventListener('click', () => {
                 document.querySelector('.filter').classList.remove('active')
                 document.querySelector('.notice').classList.remove('true')
@@ -457,6 +474,8 @@ function renderSlide10() {
             document.querySelector('.notice').querySelector('h2').innerHTML = "Ấn nút để làm lại nhé."
             document.querySelector('.notice').querySelector('button').innerHTML = "Làm lại"
             document.querySelector('.notice').classList.add('false')
+            document.getElementById('falseAudio').volume = 0.05
+            document.getElementById('falseAudio').play();
             document.querySelector('.notice').querySelector('button').addEventListener('click', () => {
                 document.querySelector('.filter').classList.remove('active')
                 document.querySelector('.notice').classList.remove('false')
@@ -472,6 +491,8 @@ function renderSlide10() {
             document.querySelector('.notice').querySelector('h2').innerHTML = "Ấn tiếp tục và chuyển sang bài tiếp theo thôi."
             document.querySelector('.notice').querySelector('button').innerHTML = "Tiếp tục"
             document.querySelector('.notice').classList.add('true')
+            document.getElementById('trueAudio').volume = 0.05
+            document.getElementById('trueAudio').play();
             document.querySelector('.notice').querySelector('button').addEventListener('click', () => {
                 document.querySelector('.filter').classList.remove('active')
                 document.querySelector('.notice').classList.remove('true')
@@ -500,6 +521,8 @@ function renderSlide11() {
             document.querySelector('.notice').querySelector('h2').innerHTML = "Ấn nút để làm lại nhé."
             document.querySelector('.notice').querySelector('button').innerHTML = "Làm lại"
             document.querySelector('.notice').classList.add('false')
+            document.getElementById('falseAudio').volume = 0.05
+            document.getElementById('falseAudio').play();
             document.querySelector('.notice').querySelector('button').addEventListener('click', () => {
                 document.querySelector('.filter').classList.remove('active')
                 document.querySelector('.notice').classList.remove('false')
@@ -515,6 +538,8 @@ function renderSlide11() {
             document.querySelector('.notice').querySelector('h2').innerHTML = "Ấn tiếp tục và chuyển sang bài tiếp theo thôi."
             document.querySelector('.notice').querySelector('button').innerHTML = "Tiếp tục"
             document.querySelector('.notice').classList.add('true')
+            document.getElementById('trueAudio').volume = 0.05
+            document.getElementById('trueAudio').play();
             document.querySelector('.notice').querySelector('button').addEventListener('click', () => {
                 document.querySelector('.filter').classList.remove('active')
                 document.querySelector('.notice').classList.remove('true')
@@ -524,15 +549,54 @@ function renderSlide11() {
     })
 }
 function renderSlide12() {
-    setTimeout(() => {
-        document.querySelector('.btn-next').classList.remove('deactive')
-    }, 0)
+    document.querySelectorAll('#slide-12 input.result').forEach((input, index) => {
+        input.value = '';
+        document.querySelectorAll('#slide-12 .result-wrapper')[index].classList.remove('false')
+        document.querySelectorAll('#slide-12 .result-wrapper')[index].classList.remove('true')
+    })
+    document.querySelector('#slide-12 .btn-result').addEventListener('click', () => {
+        document.querySelector('.filter').classList.add('active')
+        document.querySelectorAll('#slide-12 input.result').forEach((input, index) => {
+            document.querySelectorAll('#slide-12 .result-wrapper')[index].classList.remove('true')
+            document.querySelectorAll('#slide-12 .result-wrapper')[index].classList.remove('false')
+        })
+        document.querySelectorAll('#slide-12 input.result').forEach((input, index) => {
+            document.querySelectorAll('#slide-12 .result-wrapper')[index].classList.add(`${input.value == parseInt(input.getAttribute('id'))}`)
+        })
+        if (document.querySelectorAll('#slide-12 .result-wrapper.false').length > 0) {
+            document.querySelector('.notice').querySelector('h1').innerHTML = "Chưa đúng rồi !!!"
+            document.querySelector('.notice').querySelector('h2').innerHTML = "Ấn nút để làm lại nhé."
+            document.querySelector('.notice').querySelector('button').innerHTML = "Làm lại"
+            document.querySelector('.notice').classList.add('false')
+            document.getElementById('falseAudio').volume = 0.05
+            document.getElementById('falseAudio').play();
+            document.querySelector('.notice').querySelector('button').addEventListener('click', () => {
+                document.querySelector('.filter').classList.remove('active')
+                document.querySelector('.notice').classList.remove('false')
+                if (document.querySelectorAll('#slide-12 .result-wrapper.false').length > 0)
+                    document.querySelectorAll('#slide-12 input.result').forEach((input, index) => {
+                        input.value = ''
+                        document.querySelectorAll('#slide-12 .result-wrapper')[index].classList.remove('false')
+                        document.querySelectorAll('#slide-12 .result-wrapper')[index].classList.remove('true')
+                    })
+            })
+        } else {
+            document.querySelector('.notice').querySelector('h1').innerHTML = "Đúng hết rồi !!!"
+            document.querySelector('.notice').querySelector('h2').innerHTML = "Ấn tiếp tục và chuyển sang bài tiếp theo thôi."
+            document.querySelector('.notice').querySelector('button').innerHTML = "Tiếp tục"
+            document.querySelector('.notice').classList.add('true')
+            document.getElementById('trueAudio').volume = 0.05
+            document.getElementById('trueAudio').play();
+            document.querySelector('.notice').querySelector('button').addEventListener('click', () => {
+                document.querySelector('.filter').classList.remove('active')
+                document.querySelector('.notice').classList.remove('true')
+                document.querySelector('.btn-next').classList.remove('deactive')
+            })
+        }
+    })
 }
-
 function renderSlide13() {
-    setTimeout(() => {
-        document.querySelector('.btn-next').classList.remove('deactive')
-    }, 0)
+    document.querySelector('.btn-next').classList.add('deactive')
 }
 
 
