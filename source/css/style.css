@@ -125,6 +125,59 @@ input.result {
     padding: 0 3rem;
     z-index: 98;
 }
+.tutorial {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem;
+    /* margin-top: 5rem; */
+    font-size: 1.3rem;
+    font-weight: 600;
+    position: absolute;
+    animation: buble 2s ease-in-out infinite;
+}
+@keyframes buble {
+    0%{
+        bottom: 50px;
+    }
+    50%{
+        bottom: 65px;
+    }
+    100%{
+        bottom: 50px;
+    }
+}
+.tutorial .prev{
+    width: 150px;
+    height: 120px;
+    background-color: red;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 50% 75%, 25% 100%, 25% 75%, 0% 75%);
+    padding: 10px 20px;
+    background-color: rgb(255, 230, 0);
+    border: 1px solid brown;
+}
+.tutorial .reload{
+    width: 150px;
+    height: 120px;
+    background-color: red;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 65% 75%, 50% 100%, 35% 75%, 0% 75%);
+    position: relative;
+    left: 15px;
+    padding: 10px 20px;
+    background-color: rgb(255, 230, 0);
+    border: 1px solid brown;
+}
+.tutorial .next{
+    width: 160px;
+    height: 120px;
+    background-color: red;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+    padding: 10px 20px;
+    background-color: rgb(255, 230, 0);
+    border: 1px solid brown;
+}
 .btn {
     padding: 0.5rem;
     color: white;
@@ -154,12 +207,33 @@ input.result {
 }
 .logo-container {
     height: 20%;
-    background-color: indianred;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-container img{
+    height: 90%;
 }
 .infor-container {
     height: 20%;
-    background-color: khaki;
+    background-color: rgb(252, 241, 146);
     margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: 2px solid brown;
+}
+.infor-container>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.infor-container img {
+    height: 70px;
+    max-width: 90%;
+    border: 2px solid brown;
 }
 .table-content-container {
     height: 60%;
@@ -216,6 +290,7 @@ input.result {
     border-radius: 20px;
     position: relative;
     overflow: hidden;
+    border: 5px solid black;
 }
 .slide {
     width: 100%;
@@ -226,7 +301,6 @@ input.result {
 }
 .slide.active {
     z-index: 10;
-    
 }
 
 /* ========================================  */
@@ -269,7 +343,7 @@ input.result {
     font-weight: 600;
     color: brown;
     background-color: yellow;
-    margin-top: 10rem;
+    margin-top: 3rem;
 }
 #slide-1 .item {
     opacity: 0;
@@ -285,6 +359,10 @@ input.result {
     transition-delay: 4s;
 }
 #slide-1.active .item-3 {
+    transition: opacity 2s;
+    transition-delay: 5s;
+}
+#slide-1.active .item-4 {
     transition: opacity 2s;
     transition-delay: 5s;
 }

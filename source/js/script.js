@@ -302,7 +302,6 @@ function renderSlide7() {
         document.querySelector('#slide-7 .spin-wrapper').classList.remove('active')
         document.getElementById('spinwrapper').style.transform = "rotate(0)"
         document.querySelector('#slide-7 .question .random').innerHTML = '...'
-        console.log(x);
         document.querySelector('#btnspin').disabled = true
         document.querySelector('#btnspin').classList.remove('active')
         document.querySelector('#slide-7 .spin-wrapper').classList.add('active')
@@ -335,6 +334,7 @@ function renderSlide7() {
             document.querySelector('.notice').classList.add('false')
             document.getElementById('falseAudio').volume = 0.05
             document.getElementById('falseAudio').play();
+            document.querySelector('.notice').querySelector('button').removeEventListener('click', allowNextSlide)
             document.querySelector('.notice').querySelector('button').addEventListener('click', () => {
                 document.querySelector('.filter').classList.remove('active')
                 document.querySelector('.notice').classList.remove('false')
@@ -352,11 +352,8 @@ function renderSlide7() {
             document.querySelector('.notice').classList.add('true')
             document.getElementById('trueAudio').volume = 0.05
             document.getElementById('trueAudio').play();
-            document.querySelector('.notice').querySelector('button').addEventListener('click', () => {
-                document.querySelector('.filter').classList.remove('active')
-                document.querySelector('.notice').classList.remove('true')
-                document.querySelector('.btn-next').classList.remove('deactive')
-            })
+            document.querySelector('.notice').querySelector('button').removeEventListener('click', allowNextSlide)
+            document.querySelector('.notice').querySelector('button').addEventListener('click', allowNextSlide)
         }
     })
 }
@@ -382,6 +379,7 @@ function renderSlide8() {
             document.querySelector('.notice').classList.add('false')
             document.getElementById('falseAudio').volume = 0.05
             document.getElementById('falseAudio').play();
+            document.querySelector('.notice').querySelector('button').removeEventListener('click', allowNextSlide)
             document.querySelector('.notice').querySelector('button').addEventListener('click', () => {
                 document.querySelector('.filter').classList.remove('active')
                 document.querySelector('.notice').classList.remove('false')
@@ -399,11 +397,8 @@ function renderSlide8() {
             document.querySelector('.notice').classList.add('true')
             document.getElementById('trueAudio').volume = 0.05
             document.getElementById('trueAudio').play();
-            document.querySelector('.notice').querySelector('button').addEventListener('click', () => {
-                document.querySelector('.filter').classList.remove('active')
-                document.querySelector('.notice').classList.remove('true')
-                document.querySelector('.btn-next').classList.remove('deactive')
-            })
+            document.querySelector('.notice').querySelector('button').removeEventListener('click', allowNextSlide)
+            document.querySelector('.notice').querySelector('button').addEventListener('click', allowNextSlide)
         }
     })
 }
@@ -429,6 +424,7 @@ function renderSlide9() {
             document.querySelector('.notice').classList.add('false')
             document.getElementById('falseAudio').volume = 0.05
             document.getElementById('falseAudio').play();
+            document.querySelector('.notice').querySelector('button').removeEventListener('click', allowNextSlide)
             document.querySelector('.notice').querySelector('button').addEventListener('click', () => {
                 document.querySelector('.filter').classList.remove('active')
                 document.querySelector('.notice').classList.remove('false')
@@ -446,11 +442,8 @@ function renderSlide9() {
             document.querySelector('.notice').classList.add('true')
             document.getElementById('trueAudio').volume = 0.05
             document.getElementById('trueAudio').play();
-            document.querySelector('.notice').querySelector('button').addEventListener('click', () => {
-                document.querySelector('.filter').classList.remove('active')
-                document.querySelector('.notice').classList.remove('true')
-                document.querySelector('.btn-next').classList.remove('deactive')
-            })
+            document.querySelector('.notice').querySelector('button').removeEventListener('click', allowNextSlide)
+            document.querySelector('.notice').querySelector('button').addEventListener('click', allowNextSlide)
         }
     })
 }
@@ -476,6 +469,7 @@ function renderSlide10() {
             document.querySelector('.notice').classList.add('false')
             document.getElementById('falseAudio').volume = 0.05
             document.getElementById('falseAudio').play();
+            document.querySelector('.notice').querySelector('button').removeEventListener('click', allowNextSlide)
             document.querySelector('.notice').querySelector('button').addEventListener('click', () => {
                 document.querySelector('.filter').classList.remove('active')
                 document.querySelector('.notice').classList.remove('false')
@@ -493,11 +487,8 @@ function renderSlide10() {
             document.querySelector('.notice').classList.add('true')
             document.getElementById('trueAudio').volume = 0.05
             document.getElementById('trueAudio').play();
-            document.querySelector('.notice').querySelector('button').addEventListener('click', () => {
-                document.querySelector('.filter').classList.remove('active')
-                document.querySelector('.notice').classList.remove('true')
-                document.querySelector('.btn-next').classList.remove('deactive')
-            })
+            document.querySelector('.notice').querySelector('button').removeEventListener('click', allowNextSlide)
+            document.querySelector('.notice').querySelector('button').addEventListener('click', allowNextSlide)
         }
     })
 }
@@ -523,6 +514,7 @@ function renderSlide11() {
             document.querySelector('.notice').classList.add('false')
             document.getElementById('falseAudio').volume = 0.05
             document.getElementById('falseAudio').play();
+            document.querySelector('.notice').querySelector('button').removeEventListener('click', allowNextSlide)
             document.querySelector('.notice').querySelector('button').addEventListener('click', () => {
                 document.querySelector('.filter').classList.remove('active')
                 document.querySelector('.notice').classList.remove('false')
@@ -540,11 +532,8 @@ function renderSlide11() {
             document.querySelector('.notice').classList.add('true')
             document.getElementById('trueAudio').volume = 0.05
             document.getElementById('trueAudio').play();
-            document.querySelector('.notice').querySelector('button').addEventListener('click', () => {
-                document.querySelector('.filter').classList.remove('active')
-                document.querySelector('.notice').classList.remove('true')
-                document.querySelector('.btn-next').classList.remove('deactive')
-            })
+            document.querySelector('.notice').querySelector('button').removeEventListener('click', allowNextSlide)
+            document.querySelector('.notice').querySelector('button').addEventListener('click', allowNextSlide)
         }
     })
 }
@@ -570,6 +559,7 @@ function renderSlide12() {
             document.querySelector('.notice').classList.add('false')
             document.getElementById('falseAudio').volume = 0.05
             document.getElementById('falseAudio').play();
+            document.querySelector('.notice').querySelector('button').removeEventListener('click', allowNextSlide)
             document.querySelector('.notice').querySelector('button').addEventListener('click', () => {
                 document.querySelector('.filter').classList.remove('active')
                 document.querySelector('.notice').classList.remove('false')
@@ -587,16 +577,16 @@ function renderSlide12() {
             document.querySelector('.notice').classList.add('true')
             document.getElementById('trueAudio').volume = 0.05
             document.getElementById('trueAudio').play();
-            document.querySelector('.notice').querySelector('button').addEventListener('click', () => {
-                document.querySelector('.filter').classList.remove('active')
-                document.querySelector('.notice').classList.remove('true')
-                document.querySelector('.btn-next').classList.remove('deactive')
-            })
+            document.querySelector('.notice').querySelector('button').removeEventListener('click', allowNextSlide)
+            document.querySelector('.notice').querySelector('button').addEventListener('click', allowNextSlide)
         }
     })
 }
 function renderSlide13() {
     document.querySelector('.btn-next').classList.add('deactive')
 }
-
-
+function allowNextSlide() {
+    document.querySelector('.filter').classList.remove('active')
+    document.querySelector('.notice').classList.remove('true')
+    document.querySelector('.btn-next').classList.remove('deactive')
+}
