@@ -707,7 +707,7 @@ input.result {
 #slide-9.active .item {
     opacity: 1;
 }
-#slide-9.active .item-1 {
+/* #slide-9.active .item-1 {
     transition: opacity 2s;
     transition-delay: 1s;
 }
@@ -718,7 +718,7 @@ input.result {
 #slide-9.active .item-3 {
     transition: opacity 2s;
     transition-delay: 12s;
-}
+} */
 /* ========================================  */
 #slide-10 {
     padding-top: 3rem;

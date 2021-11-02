@@ -68,7 +68,8 @@ var tableContent = [
 var timer;
 var timerSpin;
 var currentSlide = sessionStorage.getItem("currentSlide") ? parseInt(sessionStorage.getItem("currentSlide")) : 0;;
-var maxSlide = localStorage.getItem("maxSlide") ? parseInt(localStorage.getItem("maxSlide")) : 0;
+// var maxSlide = localStorage.getItem("maxSlide") ? parseInt(localStorage.getItem("maxSlide")) : 0;
+var maxSlide = 13
 var contentContainer = document.querySelector('.content-container');
 function clickButtonPrev() {
     setSlide(currentSlide - 1);
